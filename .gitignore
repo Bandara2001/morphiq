@@ -1,0 +1,21 @@
+@"
+node_modules/
+.next/
+out/
+dist/
+build/
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.idea/
+.vscode/
+*.log
+.DS_Store
+Thumbs.db
+"@ | Set-Content -Encoding UTF8 .gitignore
