@@ -1,0 +1,9 @@
+fastapi[standard]
+python-dotenv
+pydantic-settings
+supabase
+google-genai
+trimesh
+pygltflib
+python-multipart
+httpx

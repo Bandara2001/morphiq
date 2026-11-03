@@ -1,4 +1,6 @@
 import type { CSSProperties } from "react";
+import Link from "next/link";
+import CategoriesSection from "@/components/home/CategoriesSection";
 import {
   ArrowRight,
   BookOpen,
@@ -7,45 +9,14 @@ import {
   ChevronRight,
   Compass,
   Dna,
-  FlaskConical,
   HeartPulse,
   Leaf,
   Microscope,
-  Search,
   Sparkles,
   Upload,
 } from "lucide-react";
 
-const categories = [
-  {
-    name: "Human Biology",
-    description: "Explore organs, systems and the human body.",
-    icon: HeartPulse,
-    color: "pink",
-    count: "Coming soon",
-  },
-  {
-    name: "Plant Biology",
-    description: "Discover plant structures and their functions.",
-    icon: Leaf,
-    color: "green",
-    count: "Coming soon",
-  },
-  {
-    name: "Animal Biology",
-    description: "Understand the fascinating world of animals.",
-    icon: Dna,
-    color: "blue",
-    count: "Coming soon",
-  },
-  {
-    name: "Cell Biology",
-    description: "Explore cells and their microscopic structures.",
-    icon: Microscope,
-    color: "purple",
-    count: "Coming soon",
-  },
-];
+
 
 const features = [
   {
@@ -100,12 +71,12 @@ export default function Home() {
       </div>
 
       <nav className="navbar">
-        <a href="#" className="brand">
+        <Link href="/" className="brand">
           <span className="brand-icon">
             <Dna size={25} />
           </span>
           <span>Morphiq<span className="brand-dot">.</span></span>
-        </a>
+        </Link>
 
         <div className="nav-links">
           <a href="#explore">Explore</a>
@@ -114,10 +85,10 @@ export default function Home() {
         </div>
 
         <div className="nav-actions">
-          <a href="#explore" className="login-link">Log in</a>
-          <a href="#explore" className="nav-button">
+          <Link href="/login" className="login-link">Log in</Link>
+          <Link href="/signup" className="nav-button">
             Get started <ArrowRight size={16} />
-          </a>
+          </Link>
         </div>
       </nav>
 
@@ -141,9 +112,9 @@ export default function Home() {
           </p>
 
           <div className="hero-actions">
-            <a href="/viewer" className="primary-button">
+            <Link href="/dashboard" className="primary-button">
              Start exploring <ArrowRight size={18} />
-             </a>
+             </Link>
             <a href="#features" className="secondary-button">
               Discover Morphiq
             </a>
@@ -192,40 +163,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="explore-section" id="explore">
-        <div className="section-heading">
-          <div>
-            <span className="section-kicker">YOUR LEARNING JOURNEY</span>
-            <h2>Explore the world of biology.</h2>
-            <p>Choose a field and discover what lies beneath the surface.</p>
-          </div>
-          <a href="#features" className="text-link">
-            Explore features <ChevronRight size={17} />
-          </a>
-        </div>
-
-        <div className="category-grid">
-          {categories.map((category) => {
-            const Icon = category.icon;
-
-            return (
-              <article className="category-card" key={category.name}>
-                <div className={`category-icon ${category.color}`}>
-                  <Icon size={26} />
-                </div>
-
-                <span className="category-status">{category.count}</span>
-                <h3>{category.name}</h3>
-                <p>{category.description}</p>
-
-                <a href="#features" className="category-link">
-                  Discover more <ArrowRight size={16} />
-                </a>
-              </article>
-            );
-          })}
-        </div>
-      </section>
+      <CategoriesSection />
 
       <section className="features-section" id="features">
         <div className="features-intro">
@@ -272,12 +210,12 @@ export default function Home() {
       </section>
 
       <footer className="footer">
-        <a href="#" className="brand">
+        <Link href="/" className="brand">
           <span className="brand-icon">
             <Dna size={21} />
           </span>
           <span>Morphiq<span className="brand-dot">.</span></span>
-        </a>
+        </Link>
         <p>Explore Biology Beyond Dimensions.</p>
         <span className="copyright">© 2026 Morphiq. All rights reserved.</span>
       </footer>
